@@ -1,4 +1,3 @@
-// components/CryptoItem.js
 import React from 'react';
 
 const CryptoItem = ({ crypto, portfolio, handleInputChange }) => {
@@ -22,19 +21,19 @@ const CryptoItem = ({ crypto, portfolio, handleInputChange }) => {
 
 const styles = {
   cryptoContainer: {
-    marginBottom: '20px',
-    padding: '15px',
+    marginBottom: '12px',
+    padding: '10px',
     borderWidth: '1px',
     borderColor: '#ddd',
     borderRadius: '10px',
     backgroundColor: '#fff',
     textAlign: 'center',
   },
-  name: { fontSize: '18px', fontWeight: 'bold' },
-  price: { fontSize: '16px', color: '#00b894' },
-  change: { fontSize: '14px', color: '#d63031' },
-  details: { fontSize: '12px', color: '#636e72' },
-  input: { height: '40px', borderColor: 'gray', borderWidth: '1px', marginTop: '20px', paddingHorizontal: '10px' },
+  name: { fontSize: '18px', fontWeight: 'bold', lineHeight: '0.2' },
+  price: { fontSize: '16px', color: '#00b894', lineHeight: '0.2' },
+  change: { fontSize: '14px', color: '#d63031', lineHeight: '0.2' },
+  details: { fontSize: '12px', color: '#636e72', lineHeight: '0.2' },
+  input: { height: '28px', borderColor: 'gray', borderWidth: '1px', marginTop: '10px', padding: '5px' },
 };
 
 export default CryptoItem;

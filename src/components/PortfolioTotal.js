@@ -1,4 +1,3 @@
-// components/PortfolioTotal.js
 import React from 'react';
 
 const PortfolioTotal = ({ totalValue, calculateTotalValue, prices }) => {
@@ -12,7 +11,7 @@ const PortfolioTotal = ({ totalValue, calculateTotalValue, prices }) => {
 
 const styles = {
   totalContainer: {
-    padding: '15px',
+    padding: '10px',
     borderWidth: '1px',
     borderColor: '#d4a373',
     borderRadius: '10px',
@@ -20,7 +19,7 @@ const styles = {
     textAlign: 'center',
     marginTop: '10px',
   },
-  totalValue: { fontSize: '18px', fontWeight: 'bold', marginTop: '10px' },
+  totalValue: { fontSize: '20px', fontWeight: 'bold', marginTop: '10px' },
 };
 
 export default PortfolioTotal;
