@@ -1,12 +1,14 @@
-import React from 'react';
+// pages/index.js
 import CryptoPrices from '../components/CryptoPrices';
 
-const Home = () => {
+export default function Home() {
   return (
-    <div style={{ padding: '20px', backgroundColor: '#264653' }}>
+    <div style={styles.container}>
       <CryptoPrices />
     </div>
   );
-};
+}
 
-export default Home;
+const styles = {
+  container: { backgroundColor: '#264653', textAlign: 'center' },
+};

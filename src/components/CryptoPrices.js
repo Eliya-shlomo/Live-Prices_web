@@ -1,5 +1,5 @@
+'use client'
 import React, { useState, useEffect, useCallback } from 'react';
-import { View, Text, StyleSheet, ActivityIndicator, ScrollView, RefreshControl } from 'react-native-web';
 import axios from 'axios';
 import CryptoItem from './CryptoItem';
 import PortfolioTotal from './PortfolioTotal';
@@ -38,7 +38,7 @@ const CryptoPrices = () => {
   useEffect(() => {
     fetchPrices();
     const interval = setInterval(fetchPrices, 30000);
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [fetchPrices]);
 
   const handleInputChange = (crypto, value) => {
@@ -51,18 +51,15 @@ const CryptoPrices = () => {
   };
 
   if (loading) {
-    return <ActivityIndicator size="large" color="#ccd5ae" />;
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <Text style={styles.errorText}>{error}</Text>;
+    return <div style={{ color: 'red', textAlign: 'center' }}>{error}</div>;
   }
 
   return (
-    <ScrollView
-      contentContainerStyle={styles.container}
-      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={fetchPrices} />}
-    >
+    <div style={{ padding: '20px', backgroundColor: '#e9edc9' }}>
       {prices.map((crypto) => (
         <CryptoItem
           key={crypto.id}
@@ -76,35 +73,8 @@ const CryptoPrices = () => {
         calculateTotalValue={() => calculateTotalValue(prices, portfolio)}
         prices={prices}
       />
-    </ScrollView>
+    </div>
   );
 };
-
-const styles = StyleSheet.create({
-    container: {
-      flexDirection: 'column',
-      padding: 20,
-      backgroundColor: '#e9edc9',
-      justifyContent: 'space-between',
-      alignItems:'center'
-    },
-    cryptoRow: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-    },
-    left: {
-      marginRight: 10,
-    },
-    center: {
-      flex: 1,
-    },
-    right: {
-      marginLeft: 10,
-    },
-    errorText: {
-      color: 'red',
-      textAlign: 'center',
-    },
-  });
 
 export default CryptoPrices;

@@ -10,7 +10,7 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 const API_KEY = process.env.API_KEY;
 
 app.prepare().then(() => {
@@ -44,6 +44,9 @@ app.prepare().then(() => {
 
   server.listen(PORT, (err) => {
     if (err) throw err;
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
   });
+}).catch((err) => {
+  console.error(err.stack);
+  process.exit(1);
 });
