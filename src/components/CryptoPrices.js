@@ -59,22 +59,42 @@ const CryptoPrices = () => {
   }
 
   return (
-    <div style={{ padding: '20px', backgroundColor: '#e9edc9' }}>
-      {prices.map((crypto) => (
-        <CryptoItem
-          key={crypto.id}
-          crypto={crypto}
-          portfolio={portfolio}
-          handleInputChange={handleInputChange}
+    <div style={styles.mainContainer}>
+      <div style={styles.contentContainer}>
+        {prices.map((crypto) => (
+          <CryptoItem
+            key={crypto.id}
+            crypto={crypto}
+            portfolio={portfolio}
+            handleInputChange={handleInputChange}
+          />
+        ))}
+        <PortfolioTotal
+          totalValue={totalValue}
+          calculateTotalValue={() => calculateTotalValue(prices, portfolio)}
+          prices={prices}
         />
-      ))}
-      <PortfolioTotal
-        totalValue={totalValue}
-        calculateTotalValue={() => calculateTotalValue(prices, portfolio)}
-        prices={prices}
-      />
+      </div>
     </div>
   );
+};
+
+const styles = {
+  mainContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minHeight: '100vh',
+    backgroundColor: '#e9edc9',
+  },
+  contentContainer: {
+    width: '100%',
+    maxWidth: '600px',
+    padding: '20px',
+    backgroundColor: '#e9edc9',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+    borderRadius: '10px',
+  },
 };
 
 export default CryptoPrices;
