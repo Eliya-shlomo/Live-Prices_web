@@ -21,6 +21,7 @@ const CryptoItem = ({ crypto, portfolio, handleInputChange }) => {
 
 const styles = {
   cryptoContainer: {
+    height: '185px', 
     marginBottom: '12px',
     padding: '10px',
     borderWidth: '1px',
@@ -29,11 +30,12 @@ const styles = {
     backgroundColor: '#fff',
     textAlign: 'center',
   },
-  name: { fontSize: '18px', fontWeight: 'bold', lineHeight: '0.2' },
-  price: { fontSize: '16px', color: '#00b894', lineHeight: '0.2' },
-  change: { fontSize: '14px', color: '#d63031', lineHeight: '0.2' },
-  details: { fontSize: '12px', color: '#636e72', lineHeight: '0.2' },
-  input: { height: '28px', borderColor: 'gray', borderWidth: '1px', marginTop: '10px', padding: '5px' },
+  name: { fontSize: '18px', fontWeight: 'bold', lineHeight: '0.4' }, 
+  price: { fontSize: '16px', color: '#00b894', lineHeight: '0.4' }, 
+  change: { fontSize: '14px', color: '#d63031', lineHeight: '0.4' }, 
+  details: { fontSize: '12px', color: '#636e72', lineHeight: '0.4' }, 
+  input: { height: '28px', width: '32%', borderColor: 'gray', borderWidth: '1px', marginTop: '10px', padding: '5px',textAlign: 'center'   },
 };
 
 export default CryptoItem;
+
