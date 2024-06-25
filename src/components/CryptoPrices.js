@@ -26,14 +26,13 @@ const CryptoPrices = () => {
     try {
       const response = await axios.get('http://localhost:5000/api/crypto-prices');
       setPrices(response.data);
-      calculateTotalValue(response.data, portfolio);
     } catch (error) {
       setError(error.message);
     } finally {
       setLoading(false);
       setRefreshing(false);
     }
-  }, [portfolio]);
+  }, []);
 
   useEffect(() => {
     fetchPrices();
@@ -47,7 +46,6 @@ const CryptoPrices = () => {
       [crypto]: value
     };
     setPortfolio(updatedPortfolio);
-    calculateTotalValue(prices, updatedPortfolio);
   };
 
   if (loading) {
